@@ -29,8 +29,8 @@ nixPkgs = [
 [phases.build]
 cmds = [
   "pip install -r requirements.txt",
-  "PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium"
+  "PLAYWRIGHT_BROWSERS_PATH=./playwright-browsers playwright install chromium"
 ]
 
 [deploy]
-startCommand = "python bot.py"
+startCommand = "PLAYWRIGHT_BROWSERS_PATH=./playwright-browsers python bot.py"
