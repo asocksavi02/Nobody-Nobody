@@ -25,7 +25,11 @@ Phone Number: {phone}
 # 🌐 Form submission
 async def submit_form(phone, email):
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+        browser = await p.chromium.launch(
+            headless=True,
+            args=["--no-sandbox", "--disable-setuid-sandbox"]
+        )
+
         page = await browser.new_page()
 
         await page.goto(
