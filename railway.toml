@@ -1,0 +1,6 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "playwright install --with-deps"
+
+[deploy]
+startCommand = "python bot.py"
